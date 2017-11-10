@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dashboard de Tasks">
+    <meta name="author" content="Silvia Coelho">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Tasks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo-branco.JPG" alt="logo voxus">
+            </div>
+            <button id="botao">Login</button>
+            <div class="link-sair">
+                    <a href="index.html">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="menu-principal">
+        <h1>Dashboard de Tasks</h1>
+        <h2>Aplicação WEB CRUD de tasks</h2>
+        <p>Cada task possui apenas um título e a aplicação deve suportar as seguintes operações:</p>
+        <menu>
+            <li>
+                <a href="listarTasks.html">
+                    <button type="button">Listar tasks</button>
+                </a>
+            </li>
+            <li>
+                <a href="criarTask.html">
+                    <button type="button">Criar task</button>
+                </a>
+            </li>
+            <li>
+                <a href="editarTask.html">
+                    <button type="button">Editar task</button>
+                </a>
+            </li>
+            <li>
+                <a href="deletarTask.html">
+                    <button type="button">Apagar task</button>
+                </a>
+            </li>
+            <li>
+                <button type="button" onclick="task.limparDados()">Limpar base de dados</button>
+            </li>
+            <li>
+                <button type="button" onclick="task.criarTesteDados()">Criar teste de dados</button>
+            </li>
+        </menu>
+    </main>
+
+    <script src="src/auth.js"></script>
+    <script src="src/model/task.js"></script>
+</body>
+
+</html>

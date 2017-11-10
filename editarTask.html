@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dashboard de Tasks">
+    <meta name="author" content="Silvia Coelho">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Tasks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo-branco.JPG" alt="logo voxus">
+            </div>
+            <button id="botao">Login</button>
+        </nav>
+    </header>
+
+    <form id="task">
+        <fieldset>
+            <br>
+            <legend>Editar Task</legend>
+            <label>Selecione Task a ser editada:</label>
+            <select name="selecionarTask"><option value=""> --- </option></select> <br><br>
+            <label>Título:</label> <br><br>
+            <!-- <input type="text" name="titulo" readonly="readonly" autofocus="autofocus"> -->
+            <input type="text" name="titulo" value="" autofocus="autofocus">
+            <br><br>
+            <label>Descrição:</label> <br><br>
+            <textarea name="descricao" value="" rows="10" cols="80"></textarea>
+            <br><br>
+            <label>Selecione Prioridade da Task</label>
+            <select name="prioridade">
+                <option value="1">Prioridade 1</option>
+                <option value="2">Prioridade 2</option>
+                <option value="3">Prioridade 3</option>
+                <option value="4">Prioridade 4</option>
+                <option value="5">Prioridade 5</option>
+            </select>  <br><br>
+            <input type="text" name="usuario" value="" autofocus="autofocus">
+            <button type="button" name="commit">Salvar Alterações</button>
+        </fieldset>
+    </form>
+
+
+
+    <div class="link-voltar">
+        <a href="principal.html">Voltar</a>
+    </div>
+
+    <script src="src/auth.js"></script>
+    <script src="src/ctrl/initialize.js"></script>
+    <script src="src/model/task.js"></script>
+    <script src="src/view/editarTask.js"></script>
+    <script>
+        window.addEventListener("load", dt.view.editarTask.setupUserInterface);
+    </script>
+
+
+</body>
+
+</html>

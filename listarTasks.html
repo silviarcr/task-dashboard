@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dashboard de Tasks">
+    <meta name="author" content="Silvia Coelho">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Tasks</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo-branco.JPG" alt="logo voxus">
+            </div>
+            <button id="botao">Login</button>
+        </nav>
+    </header>
+
+    <div>
+        <h1>Listar Tasks</h1>
+        <table id="tasks">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Prioridade</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="link-voltar">
+            <a href="principal.html">Voltar</a>
+        </div>
+    </div>
+    <script src="src/auth.js"></script>
+    <script src="src/ctrl/initialize.js"></script>
+    <script src="src/model/task.js"></script>
+    <script src="src/view/listarTasks.js"></script>
+    <script>
+        window.addEventListener("load", dt.view.listarTasks.setupUserInterface);
+    </script>
+
+
+</body>
+
+</html>
