@@ -56,6 +56,7 @@ task.add = function (attr) {
     var _task = new task(attr);
     task.instances[attr.titulo] = _task;
     console.log("Task " + attr.titulo + " criada!");
+
 };
 
 //atualizando task precisa ver sobre atributo/id

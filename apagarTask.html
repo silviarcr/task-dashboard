@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -21,31 +22,38 @@
         </nav>
     </header>
 
-    <div>
-        <h1>Listar Tasks</h1>
-        <table id="tasks">
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Descrição</th>
-                    <th>Prioridade</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <div class="link-voltar">
-            <a href="principal.html">Voltar</a>
-        </div>
+    <form id="task">
+        <fieldset>
+            <br>
+            <legend>Apagar Task</legend>
+            <label>Selecione Task:</label>
+            <select name="apagarTask">
+                <option value=""> --- </option>
+            </select>
+            <br>
+            <button type="button" name="commit">Apagar Task</button>
+        </fieldset>
+    </form>
+    
+    <div class="link-voltar">
+        <a href="principal.html">Voltar</a>
     </div>
+
     <script src="src/auth.js"></script>
     <script src="src/ctrl/initialize.js"></script>
     <script src="src/model/task.js"></script>
-    <script src="src/view/listarTasks.js"></script>
+    <script src="src/view/apagarTask.js"></script>
     <script>
-        window.addEventListener("load", dt.view.listarTasks.setupUserInterface);
+        window.addEventListener("load", dt.view.apagarTask.setupUserInterface);
     </script>
 
 
 </body>
 
 </html>
+
+
+
+
+
+

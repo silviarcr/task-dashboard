@@ -8,28 +8,35 @@ dt.view.editarTask = {
       task.loadAll();
       // populate the selection list with tasks
       keys = Object.keys(task.instances);
+      console.log(task.instances);
+
       for (i=0; i < keys.length; i++) {
         key = keys[i];
         _task = task.instances[key];
         optionEl = document.createElement("option");
         optionEl.text = _task.titulo;
         optionEl.text = _task.descricao;
-        optionEl.value = _task.prioridade;
+        optionEl.text = _task.prioridade;
         optionEl.text = _task.usuario;
         selecionarTaskEl.add( optionEl, null);
-        
+        console.log(optionEl.text);
        }
       // when a task is selected, populate the form with the task data
       selecionarTaskEl.addEventListener("change", function () {
+        console.log("selecionarTaskEl");
+
           var _task=null, key = selecionarTaskEl.value;
-          console.log(key);
+          console.log(selecionarTaskEl.value);
          
           if (key) {
-            _task = task.instances[key];
-            formEl.titulo.value = _task.titulo;
-            formEl.descricao.value = task.descricao;
-            formEl.prioridade.value = task.prioridade;
-            formEl.usuario.value = task.usuario;
+            console.log("if key");
+             _task = task.instances[key];
+             console.log(task.instances); 
+            console.log(_task);
+            // formEl.titulo.value = _task.titulo;
+            formEl.descricao = task.descricao;
+            formEl.prioridade = task.prioridade;
+            formEl.usuario = task.usuario;
           } else {
             formEl.titulo.value = "";
             formEl.descricao.value = "";
