@@ -21,7 +21,6 @@
     </header>
     <main>
         <h1>Dashboard de Tasks</h1>
-        <button id="botao-cadastro">Cadastre-se</button>
     </main>
 
     <div id="fundo">
@@ -30,7 +29,7 @@
                 <img src="img/icon.png" alt="xis"></img>
             </div>
             <img src="img/logo-branco.JPG" alt="logo voxus" class="logo-login"></img>
-            <form class="formulario" action="principal.html">
+            <form class="formulario" name="formlogin" onsubmit="return OnSubmitForm();">
                 <input type="email" id="email" class="boxTexto" name="username" placeholder="Email" required>
                 <input type="password" id="senha" class="boxEmail" name="username" placeholder="Senha" required>
                 <br>
@@ -39,23 +38,6 @@
         </div>
     </div>
 
-    <div id="fundo-cadastro">
-        <div id="modal-cadastro">
-            <div id="botaoFechar-cadastro">
-                <img src="img/icon.png" alt="xis"></img>
-            </div>
-            <img src="img/logo-branco.JPG" alt="logo voxus" class="logo-login"></img>
-            <form class="formulario" action="">
-                <input type="text" id="nomeCadastro" class="boxTexto" name="username" placeholder="Insira seu nome" required>
-                <input type="email" id="emailCadastro" class="boxEmail" name="username" placeholder="Insira seu e-mail" required>
-                <br>
-                <input type="password" id="senhaCadastro" class="boxSenha" name="username" placeholder="Crie uma senha" required>
-                <br>
-                <input type="submit" value="Cadastrar" class="botao-login">
-            </form>
-        </div>
-    </div>
-    
     <script src="src/script.js"></script>
 </body>
 

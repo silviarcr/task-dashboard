@@ -21,28 +21,39 @@
         </nav>
     </header>
 
-    <form id="task">
-        <fieldset>
-            <br>
-            <legend>Criar nova task</legend> 
-            <label>Título:</label> <br><br>
-            <input type="text" name="titulo" class="required" placeholder="Qual o título da Task" autofocus="autofocus">
-            <br><br>
-            <label>Descrição:</label> <br><br>
-            <textarea name="descricao" rows="10" cols="80" placeholder="Faça uma descrição da task informando o que dever ser feito, necessidade, requisitos, etc"></textarea>
-            <br><br>
-            <label>Selecione Prioridade da Task</label>
-            <select name="prioridade">
-                <option value="1">Prioridade 1</option>
-                <option value="2">Prioridade 2</option>
-                <option value="3">Prioridade 3</option>
-                <option value="4">Prioridade 4</option>
-                <option value="5">Prioridade 5</option>
-            </select>  <br><br>
-            <input type="text" name="usuario" class="required" placeholder="Usuário" autofocus="autofocus">
-            <button type="button" name="commit">Salvar</button>
-        </fieldset>
-    </form>
+
+    <main>
+        <form id="task">
+            <fieldset>
+                <br>
+                <legend>Criar nova task</legend>
+                <label>Título:</label>
+                <br>
+                <br>
+                <input type="text" name="titulo" class="required" placeholder="Qual o título da Task" autofocus="autofocus">
+                <br>
+                <br>
+                <label>Descrição:</label>
+                <br>
+                <br>
+                <textarea name="descricao" rows="10" cols="80" placeholder="Faça uma descrição da task informando o que dever ser feito, necessidade, requisitos, etc"></textarea>
+                <br>
+                <br>
+                <label>Selecione Prioridade da Task</label>
+                <select name="prioridade">
+                    <option value="1">Prioridade 1</option>
+                    <option value="2">Prioridade 2</option>
+                    <option value="3">Prioridade 3</option>
+                    <option value="4">Prioridade 4</option>
+                    <option value="5">Prioridade 5</option>
+                </select>
+                <br>
+                <br>
+                <input type="text" name="usuario" class="required" placeholder="Usuário" autofocus="autofocus">
+                <button type="button" name="commit">Salvar</button>
+            </fieldset>
+        </form>
+    </main>
 
 
 
@@ -50,7 +61,6 @@
         <a href="principal.html">Voltar</a>
     </div>
 
-    <!-- <script src="src/auth.js"></script> -->
     <script src="src/ctrl/initialize.js"></script>
     <script src="src/model/task.js"></script>
     <script src="src/view/criarTask.js"></script>
