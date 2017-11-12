@@ -12,10 +12,13 @@ dt.view.editarTask = {
     for (i = 0; i < keys.length; i++) {
       key = keys[i];
       _task = task.instances[key];
-      optionEl = document.createElement("option");
-      optionEl.text = _task.titulo;
-      selecionarTaskEl.add(optionEl, null);
 
+      if (_task.titulo !== '' && _task.titulo !== null && typeof _task.titulo !== 'undefined') {
+        optionEl = document.createElement("option");
+        optionEl.text = _task.titulo;
+        selecionarTaskEl.add(optionEl, null);
+      }
+      
     }
     // when a task is selected, populate the form with the task data
     selecionarTaskEl.addEventListener("change", function () {

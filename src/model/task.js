@@ -27,7 +27,6 @@ task.loadAll = function () {
     if (taskTableString) {
         taskTable = JSON.parse(taskTableString);
         keys = Object.keys(taskTable);
-        console.log(keys.length + " tasks loaded.");
         for (i = 0; i < keys.length; i++) {
             key = keys[i];
             task.instances[key] = task.convertRow2Obj(taskTable[key]);
