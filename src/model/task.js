@@ -63,7 +63,7 @@ task.add = function (attr) {
 task.update = function (attr) {
     var _task = task.instances[attr.titulo];
 
-    if (_task.titulo !== attr.title) { _task.title = attr.titulo; }
+    if (_task.titulo !== attr.titulo) { _task.titulo = attr.titulo; }
     if (_task.descricao !== attr.descricao) { _task.descricao = attr.descricao; }
     if (_task.prioridade !== attr.prioridade) { _task.prioridade = attr.prioridade; }
     if (_task.usuario !== attr.usuario) { _task.usuario = attr.usuario; }
@@ -72,7 +72,7 @@ task.update = function (attr) {
 
 //apagando task precisa ver sobre atributo/id
 task.destroy = function (titulo) {
-    if (task.instances[tiulo]) {
+    if (task.instances[titulo]) {
         console.log("Task " + titulo + " apagada");
         delete task.instances[titulo];
     } else {
@@ -80,15 +80,6 @@ task.destroy = function (titulo) {
     }
 };
 
-//criando teste de dados
-task.criarTesteDados = function () {
-    task.instances["006251587X"] = new task({ isbn: "006251587X", title: "Weaving the Web", year: 2000 });
-    task.instances["0465026567"] = new task({ isbn: "0465026567", title: "Gödel, Escher, Bach", year: 1999 });
-    task.instances["0465030793"] = new task({ isbn: "0465030793", title: "I Am A Strange Loop", year: 2008 });
-    task.saveAll();
-};
-
-//
 task.limparDados = function () {
     if (confirm("Você quer realmente apagar todas as tasks?")) {
         localStorage["taskTable"] = "{}";

@@ -1,31 +1,35 @@
-pl.view.deleteBook = {
+dt.view.apagarTask = {
   setupUserInterface: function () {
-    var deleteButton = document.forms['Book'].commit;
-    var selectEl = document.forms['Book'].selectBook;
-    var i = 0, key = "", keys = [], book = null, optionEl = null;
-    // load all book objects
-    Book.loadAll();
-    keys = Object.keys(Book.instances);
-    // populate the selection list with books
-    for (i = 0; i & lt; keys.length; i++) {
+   // var deleteButton = document.forms['task'].commit;
+  //  var selectEl = document.forms['task'].apagarTask;
+  var formEl = document.forms['task'],
+  deleteButton = formEl.commit,
+  apagarTaskEl = formEl.apagarTask;
+
+    var i = 0, key = "", keys = [], _task = null, optionEl = null;
+    // load all task objects
+    task.loadAll();
+    keys = Object.keys(task.instances);
+    // populate the selection list with task
+    for (i = 0; i < keys.length; i++) {
       key = keys[i];
-      book = Book.instances[key];
+      _task = task.instances[key];
       optionEl = document.createElement("option");
-      optionEl.text = book.title;
-      optionEl.value = book.isbn;
-      selectEl.add(optionEl, null);
+      optionEl.text = _task.titulo;
+     // optionEl.value = book.isbn;
+     apagarTaskEl.add(optionEl, null);
     }
     deleteButton.addEventListener("click",
-      pl.view.deleteBook.handleDeleteButtonClickEvent);
+    dt.view.apagarTask.handleDeleteButtonClickEvent);
     window.addEventListener("beforeunload", function () {
-      Book.saveAll();
+      task.saveAll();
     });
   },
   handleDeleteButtonClickEvent: function () {
-    var selectEl = document.forms['Book'].selectBook;
-    var isbn = selectEl.value;
-    if (isbn) {
-      Book.destroy(isbn);
+    var selectEl = document.forms['task'].apagarTask;
+    var titulo = selectEl.value;
+    if (titulo) {
+      task.destroy(titulo);
       selectEl.remove(selectEl.selectedIndex);
     }
   }
