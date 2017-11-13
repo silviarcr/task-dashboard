@@ -1,201 +1,245 @@
 * {
   box-sizing: border-box;
 }
-
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
-
 body {
   color: #FFFFFF;
   font-family: sans-serif;
-  height: 100vh;
   background-attachment: fixed;
   background: #7f469a;
   background-size: cover;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
   background: white;
   box-shadow: 0px -1px 8px 0px #444;
-}
-
-nav > button, .link-voltar > a, .link-sair > a{
-  background: #e7daec;
-  border: none;
   padding: 10px 20px;
-  color: #7f479a;
-  border-radius: 2px;
-  font-size: 12px;
-  font-weight: 700;
-  box-shadow: 1px 1px 5px 0px #444;
-  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
-}
-
-nav > button:hover, .link-sair > a:hover{
-  cursor: pointer;
-  background: #7f479a;
-  color: #fff;
-}
-.link-voltar{
-  background: #7f479a;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+nav > button,
+.link-voltar > a,
+.link-sair > a {
+  font-size: 12px;
+  font-weight: 700;
+  background: #e7daec;
+  color: #7f479a;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px 0px #444;
   padding: 10px 20px;
- }
-
-.link-voltar > a, .link-sair > a{
+  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
+}
+nav > button:hover,
+.link-sair > a:hover {
+  background: #7f479a;
+  color: #fff;
+  cursor: pointer;
+}
+.link-voltar {
+  background: #7f479a;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link-voltar > a,
+.link-sair > a {
   text-decoration: none;
 }
-.link-voltar > a:hover{
-  cursor: pointer;
+.link-voltar > a:hover {
   background-color: #fff;
+  cursor: pointer;
 }
-
 main {
   color: #fff;
+  padding: 0 20px;
   flex: 1 1 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
- }
-
+}
 main > button {
   background: #fff;
-  border: none;
-  padding: 10px 20px;
-  width: 120px;
   color: #7f479a;
-  border-radius: 2px;
   font-size: 12px;
   font-weight: 700;
+  padding: 10px 20px;
+  width: 120px;
+  border-radius: 2px;
+  border: none;
   box-shadow: 1px 1px 5px 0px #444;
   transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
 }
-
-main > button:hover{
-  cursor: pointer;
+main > button:hover {
   background: #e7daec;
-  box-shadow: 1px 1px 5px 0px #444;
   color: #d13a9f;
+  box-shadow: 1px 1px 5px 0px #444;
+  cursor: pointer;
+}
+.menu-principal {
+  margin: 0 auto;
+}
+#modal,
+#modal-cadastro {
+  background: white;
+  font-family: arial;
+  border-radius: 5px;
+  margin: auto;
+  padding-top: 10px;
+  width: 300px;
+  z-index: 9;
+  position: relative;
+}
+.boxTexto {
+  border-radius: 15px;
+  border-width: 1px;
+  border-color: #7E459A;
+  margin: 10px;
+  padding-left: 10px;
+  height: 30px;
+}
+.boxEmail {
+  border-radius: 15px;
+  border-width: 1px;
+  border-color: #7E459A;
+  margin: 0px 10px 30px 10px;
+  padding-left: 10px;
+  height: 30px;
+}
+.boxSenha {
+  border-radius: 15px;
+  border-width: 1px;
+  border-color: #7E459A;
+  margin: 10px;
+  padding-left: 10px;
+  height: 30px;
+}
+.logo-login {
+  padding: 50px;
+  margin: 0;
+}
+.formulario {
+  padding: 46px;
+  padding-top: 10px;
+  margin: auto;
+  display: block;
+}
+.botao-login {
+  background-color: rebeccapurple;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 15px;
+  margin-left: 42px;
+  margin-top: 10px;
+  padding: 8px 30px 8px 30px;
+}
+#botaoFechar,
+#botaoFechar-cadastro {
+  opacity: 0.4;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+#botaoFechar img,
+#botaoFechar-cadastro img {
+  width: 30px;
+}
+#fundo,
+#fundo-cadastro {
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+#fundo.visivel,
+#fundo-cadastro.visivel {
+  display: flex;
 }
 
-.menu-principal{
-  margin: 0 auto;
- }
+/* Tabela - Listar Tasks */
 
-#modal, #modal-cadastro {
-        /*display: none;*/
-        position: relative;
-        margin: auto;
-        /*height: 50%;*/
-        padding-top: 10px;
-        width: 300px;
-        background: white;
-        border-radius: 5px;
-        z-index: 9;
-        font-family: arial;
-      }
-      
-      .boxTexto {
-        margin: 10px;
-        padding-left: 10px;
-        height: 30px;
-        border-radius: 15px;
-        border-width: 1px;
-        border-color: #7E459A;
-      }
-      
-      .boxEmail {
-        margin: 0px 10px 30px 10px;
-        padding-left: 10px;
-        height: 30px;
-        border-radius: 15px;
-        border-width: 1px;
-        border-color: #7E459A;
-      }
+#tasks {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#tasks td,
+#tasks th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#tasks tr:nth-child(even) {
+  background-color: #ae74e4;
+}
+#tasks tr:hover {
+  background-color: #444;
+}
+#tasks th {
+  background-color: #874caf;
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+/* Lista de Funcionalidades da Aplicação */
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  font-size: 20px;
+  border: 2px;
+  padding: 6px;
+}
+li:last-child {
+  border: none;
+}
+li button {
+  font-size: 18px;
+  color: #444;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 1px 1px 5px 0px #444;
+  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
+}
+li button:hover {
+  background: #e7daec;
+  color: #d13a9f;
+  box-shadow: 1px 1px 5px 0px #444;
+  cursor: pointer;
+  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
+}
 
-      .boxSenha {
-        margin: 10px;
-        padding-left: 10px;
-        height: 30px;
-        border-radius: 15px;
-        border-width: 1px;
-        border-color: #7E459A;
-      }
-      
-      .logo-login{
-        padding: 50px;
-        margin: 0;
-      }
-
-      .formulario {
-        display: block;
-        padding: 46px;
-        padding-top: 10px;
-        margin: auto;
-      }
-
-      .botao-login {
-        padding: 8px 30px 8px 30px;
-        background-color: rebeccapurple;
-        color: #FFFFFF;
-        border: none;
-        border-radius: 15px;
-        margin-left: 42px;
-        margin-top: 10px;
-      }
-
-      #botaoFechar, #botaoFechar-cadastro {
-        opacity: 0.4;
-        position: absolute;
-        top: 5%;
-        right: 5%;
-      }
-
-      #botaoFechar img, #botaoFechar-cadastro img {
-        width: 30px;
-      }
-
-      #fundo, #fundo-cadastro {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        display: none;
-      }
-
-       #fundo.visivel, #fundo-cadastro.visivel {
-        display: flex;
-      }
-
-      .erro {
-        animation: shake 0.2s;
-      }
-      @keyframes shake {
-        0% {
-          transform: none;
-        }
-        33% {
-          transform: translateX(-7px);
-        }
-        66% {
-          transform: translateX(7px);
-        }
-        100% {
-          transform: none;
-        }
-      }
+/* Forms */
+#task fieldset{
+  border: 1px solid #fff;
+}
+#task fieldset button{
+  font-size: 17px;
+  color: #444;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 1px 1px 5px 0px #444;
+  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
+}
+#task fieldset button:hover{
+  background: #e7daec;
+  color: #d13a9f;
+  box-shadow: 1px 1px 5px 0px #444;
+  cursor: pointer;
+  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
+}

@@ -12,9 +12,7 @@ dt.view.criarTask = {
     },
     handleSaveButtonClickEvent: function () {
         var formEl = document.forms['task'];
-        if( formEl.done.checked === true){
-            console.log("se cria e coloca tasck como done");
-             }
+       
         var attr = {
             titulo: formEl.titulo.value,
             descricao: formEl.descricao.value,
@@ -22,6 +20,13 @@ dt.view.criarTask = {
             usuario: formEl.usuario.value,
             done: formEl.done.checked
         };
+        if( formEl.done.checked === true){
+            attr.usuarioFinal = attr.usuario;
+        }
+        else{
+            attr.usuarioFinal = "não concluída";
+        }
+        
         task.add(attr);
         formEl.reset();
     }

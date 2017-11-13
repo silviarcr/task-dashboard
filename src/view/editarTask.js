@@ -12,14 +12,14 @@ dt.view.editarTask = {
     for (i = 0; i < keys.length; i++) {
       key = keys[i];
       _task = task.instances[key];
-      //  if (_task.done === true) {
-      //    return;
-      //  }
 
       if (_task.titulo !== '' && _task.titulo !== null && typeof _task.titulo !== 'undefined') {
         optionEl = document.createElement("option");
         optionEl.text = _task.titulo;
         selecionarTaskEl.add(optionEl, null);
+        //  if (_task.done === true) {
+        //    return;
+        //  }
       }
 
     }
@@ -27,7 +27,6 @@ dt.view.editarTask = {
     selecionarTaskEl.addEventListener("change", function () {
 
       var _task = null, key = selecionarTaskEl.value;
-
 
       if (key) {
         _task = task.instances[key];
@@ -43,6 +42,13 @@ dt.view.editarTask = {
         formEl.prioridade.value = "";
         formEl.usuario.value = "";
       }
+      if (formEl.done.checked === true) {
+        saveButton.setAttribute("disabled","");
+        alert("Task concluída. Não é possível fazer alterações!");
+      }
+      else {
+        saveButton.removeAttribute("disabled");
+      }
     });
     saveButton.addEventListener("click",
       dt.view.editarTask.handleUpdateButtonClickEvent);
@@ -57,9 +63,15 @@ dt.view.editarTask = {
       titulo: formEl.titulo.value,
       descricao: formEl.descricao.value,
       prioridade: formEl.prioridade.value,
-      done: formEl.done.checked,
-      usuario: formEl.usuario.value
+      done: formEl.done.checked
+     // usuario: formEl.usuario.value
     };
+    if (attr.done === true) {
+      attr.usuarioFinal = formEl.usuario.value;
+    }
+    else {
+      attr.usuarioFinal = "não concluída";
+    }
     task.update(attr);
     formEl.reset();
   }

@@ -5,7 +5,7 @@ function task(attr) {
     this.prioridade = attr.prioridade;
     this.usuario = attr.usuario;
     this.done = attr.done;
-    //this.usuarioFinal = attr.usuarioFinal;
+    this.usuarioFinal = attr.usuarioFinal;
 };
 
 //load all
@@ -55,19 +55,18 @@ task.saveAll = function () {
 task.add = function (attr) {
     var _task = new task(attr);
     task.instances[attr.titulo] = _task;
-    console.log("Task " + attr.titulo + " criada!");
-
 };
 
 //atualizando task 
 task.update = function (attr) {
     var _task = task.instances[attr.titulo];
 
+   
     if (_task.titulo !== attr.titulo) { _task.titulo = attr.titulo; }
     if (_task.descricao !== attr.descricao) { _task.descricao = attr.descricao; }
     if (_task.prioridade !== attr.prioridade) { _task.prioridade = attr.prioridade; }
-    if (_task.usuario !== attr.usuario) { _task.usuario = attr.usuario; }
-   // if (_task.usuarioFinal !== attr.usuarioFinal) { _task.usuarioFinal = attr.usuarioFinal; }
+  //  if (_task.usuario !== attr.usuario) { _task.usuario = attr.usuario; }
+    if (_task.usuarioFinal !== attr.usuarioFinal) { _task.usuarioFinal = attr.usuarioFinal; }
     if (_task.done !== attr.done) { _task.done = attr.done; }
 };
 
