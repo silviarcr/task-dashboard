@@ -4,6 +4,8 @@ function task(attr) {
     this.descricao = attr.descricao;
     this.prioridade = attr.prioridade;
     this.usuario = attr.usuario;
+    this.done = attr.done;
+    //this.usuarioFinal = attr.usuarioFinal;
 };
 
 //load all
@@ -50,7 +52,6 @@ task.saveAll = function () {
 };
 
 //criar 
-// funcao add precisa ver sobre atributo/id
 task.add = function (attr) {
     var _task = new task(attr);
     task.instances[attr.titulo] = _task;
@@ -58,7 +59,7 @@ task.add = function (attr) {
 
 };
 
-//atualizando task precisa ver sobre atributo/id
+//atualizando task 
 task.update = function (attr) {
     var _task = task.instances[attr.titulo];
 
@@ -66,10 +67,11 @@ task.update = function (attr) {
     if (_task.descricao !== attr.descricao) { _task.descricao = attr.descricao; }
     if (_task.prioridade !== attr.prioridade) { _task.prioridade = attr.prioridade; }
     if (_task.usuario !== attr.usuario) { _task.usuario = attr.usuario; }
-
+   // if (_task.usuarioFinal !== attr.usuarioFinal) { _task.usuarioFinal = attr.usuarioFinal; }
+    if (_task.done !== attr.done) { _task.done = attr.done; }
 };
 
-//apagando task precisa ver sobre atributo/id
+//apagando task 
 task.destroy = function (titulo) {
     if (task.instances[titulo]) {
         console.log("Task " + titulo + " apagada");
