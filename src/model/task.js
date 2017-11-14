@@ -16,7 +16,6 @@ task.convertRow2Obj = function (taskRow) {
     return _task;
 };
 
-
 task.loadAll = function () {
     var i = 0, key = "", keys = [], taskTableString = "", taskTable = {};
     try {
@@ -35,7 +34,6 @@ task.loadAll = function () {
         }
     }
 };
-
 
 //save all
 task.saveAll = function () {
@@ -65,7 +63,6 @@ task.update = function (attr) {
     if (_task.titulo !== attr.titulo) { _task.titulo = attr.titulo; }
     if (_task.descricao !== attr.descricao) { _task.descricao = attr.descricao; }
     if (_task.prioridade !== attr.prioridade) { _task.prioridade = attr.prioridade; }
-  //  if (_task.usuario !== attr.usuario) { _task.usuario = attr.usuario; }
     if (_task.usuarioFinal !== attr.usuarioFinal) { _task.usuarioFinal = attr.usuarioFinal; }
     if (_task.done !== attr.done) { _task.done = attr.done; }
 };

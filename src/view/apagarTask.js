@@ -1,7 +1,6 @@
 dt.view.apagarTask = {
   setupUserInterface: function () {
-    // var deleteButton = document.forms['task'].commit;
-    //  var selectEl = document.forms['task'].apagarTask;
+
     var formEl = document.forms['task'],
       deleteButton = formEl.commit,
       apagarTaskEl = formEl.apagarTask;

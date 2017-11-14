@@ -16,7 +16,16 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* NAVBAR - Logo e Botão Login/Logout */
+main {
+  color: #fff;
+  padding: 0 20px;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* NAVBAR - Logo, Link Voltar/Sair, Tela  */
 nav {
   background: white;
   box-shadow: 0px -1px 8px 0px #444;
@@ -58,25 +67,9 @@ nav > button:hover,
   color: #ff6a36;
   cursor: pointer;
 }
-main {
-  color: #fff;
-  padding: 0 20px;
-  flex: 1 1 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu-principal {
-  margin: 0 auto;
-  display: flex;
- }
- 
-#modal,
-#modal-cadastro {
+/* Tela login */
+#modal {
   background: white;
-  font-family: arial;
   border-radius: 5px;
   margin: auto;
   padding-top: 10px;
@@ -84,28 +77,10 @@ main {
   z-index: 9;
   position: relative;
 }
-
 .logo-login {
   padding: 50px;
   margin: 0;
 }
-.boxTexto {
-  border-radius: 15px;
-  border-width: 1px;
-  border-color: #7E459A;
-  margin: 10px;
-  padding-left: 10px;
-  height: 30px;
-}
-.boxEmail {
-  border-radius: 15px;
-  border-width: 1px;
-  border-color: #7E459A;
-  margin: 0px 10px 30px 10px;
-  padding-left: 10px;
-  height: 30px;
-}
-
 .botao-login {
   background-color: #ff6a36;
   color: #FFFFFF;
@@ -115,19 +90,35 @@ main {
   margin-top: 10px;
   padding: 8px 30px 8px 30px;
 }
-#botaoFechar,
-#botaoFechar-cadastro {
+.botao-login:hover {
+  background-color: #ccc;
+  color: #ff6a36;
+  cursor: pointer;
+}
+.formulario {
+  padding: 46px;
+  padding-top: 10px;
+  margin: auto;
+  display: block;
+}
+.boxEmail {
+  border-radius: 15px;
+  border-width: 1px;
+  border-color: #7E459A;
+  margin: 0px 10px 30px 10px;
+  padding-left: 10px;
+  height: 30px;
+}
+#botaoFechar{
   opacity: 0.4;
   position: absolute;
   top: 5%;
   right: 5%;
 }
-#botaoFechar img,
-#botaoFechar-cadastro img {
+#botaoFechar img {
   width: 30px;
 }
-#fundo,
-#fundo-cadastro {
+#fundo {
   background: rgba(0, 0, 0, 0.6);
   top: 0;
   left: 0;
@@ -136,46 +127,15 @@ main {
   position: absolute;
   display: none;
 }
-#fundo.visivel,
-#fundo-cadastro.visivel {
+#fundo.visivel{
   display: flex;
 }
-
-/* Formulario de Login */
-.formulario {
-  padding: 46px;
-  padding-top: 10px;
-  margin: auto;
-  display: block;
-}
-
-/* Tabela - Listar Tasks */
-#tasks {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-#tasks td,
-#tasks th {
-  border: 1px solid #444;
-  padding: 8px;
-}
-#tasks tr:nth-child(even) {
-  background-color: #ae74e4;
-}
-#tasks tr:hover {
-  background-color: #444;
-}
-#tasks th {
-  /* background-color: #874caf; */
-  background-color: #ccc;
-  color: #686975;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-}
-/* Lista de Funcionalidades da Aplicação */
-ul {
+/* Menu tela de principais funcionalidades da aplicação  */
+.menu-principal {
+  margin: 0 auto;
+  display: flex;
+ }
+ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -188,7 +148,6 @@ li {
 li:last-child {
   border: none;
 }
-
 li button:hover {
   background: #e7daec;
   color: #ff6a36;
@@ -196,8 +155,27 @@ li button:hover {
   cursor: pointer;
   transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
 }
-
-/* Forms */
+/* Tabela - Listar Tasks */
+#tasks {
+  border-collapse: collapse;
+  width: 100%;
+}
+#tasks td,
+#tasks th {
+  border: 1px solid #444;
+  padding: 8px;
+}
+#tasks tr:nth-child(even) {
+  background-color: #ae74e4;
+}
+#tasks th {
+  background-color: #ccc;
+  color: #686975;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+/* Formulários para criar/apagar/editar task*/
 #task fieldset{
   border: 1px solid #fff;
 }

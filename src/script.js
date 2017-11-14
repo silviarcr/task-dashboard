@@ -1,5 +1,4 @@
 var botao = document.getElementById("botao");
-//var modal = document.getElementById("modal");
 var fundo = document.getElementById("fundo");
 var botaoFechar = document.getElementById("botaoFechar");
 
@@ -14,7 +13,6 @@ fundo.onclick = function (e) {
         fundo.classList.remove("visivel");
     }
 }
-
 // Login
 function OnSubmitForm() {
     var email = document.getElementById("email");

@@ -1,8 +1,10 @@
 dt.view.editarTask = {
   setupUserInterface: function () {
+
     var formEl = document.forms['task'],
       saveButton = formEl.commit,
       selecionarTaskEl = formEl.selecionarTask;
+
     var i = 0, key = "", keys = [], _task = null, optionEl = null;
     // load all task objects
     task.loadAll();
@@ -17,9 +19,6 @@ dt.view.editarTask = {
         optionEl = document.createElement("option");
         optionEl.text = _task.titulo;
         selecionarTaskEl.add(optionEl, null);
-        //  if (_task.done === true) {
-        //    return;
-        //  }
       }
 
     }
@@ -64,8 +63,8 @@ dt.view.editarTask = {
       descricao: formEl.descricao.value,
       prioridade: formEl.prioridade.value,
       done: formEl.done.checked
-     // usuario: formEl.usuario.value
     };
+    
     if (attr.done === true) {
       attr.usuarioFinal = formEl.usuario.value;
     }
