@@ -17,6 +17,9 @@
             <div class="logo">
                 <img src="img/logo-branco.JPG" alt="logo voxus">
             </div>
+            <div class="link-sair">
+                <a href="index.html">Logout</a>
+            </div>
         </nav>
     </header>
 
@@ -25,7 +28,7 @@
             <fieldset>
                 <br>
                 <legend>Editar Task</legend>
-                <label>Selecione Task a ser editada:</label>
+                <label>Selecione Task:</label>
                 <select name="selecionarTask">
                     <option value=""> --- </option>
                 </select>
@@ -40,32 +43,34 @@
                 <label>Descrição:</label>
                 <br>
                 <br>
-                <textarea name="descricao" value="" rows="8" cols="80"></textarea>
+                <textarea name="descricao" value="" rows="6" cols="80"></textarea>
                 <br>
                 <br>
                 <label>Prioridade</label>
                 <select name="prioridade">
-                    <option value="1">Prioridade 1</option>
-                    <option value="2">Prioridade 2</option>
-                    <option value="3">Prioridade 3</option>
-                    <option value="4">Prioridade 4</option>
-                    <option value="5">Prioridade 5</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
                 <br>
                 <br>
                 <input type="text" name="usuario" value="" autofocus="autofocus">
-                <label>Done</label> <input name="done" type="checkbox" id="myCheck">
-                <br><br>
+                <label>Done</label>
+                <input name="done" type="checkbox" id="myCheck">
+                <br>
+                <br>
                 <button type="button" name="commit">Salvar Alterações</button>
             </fieldset>
         </form>
-
+        <div class="link-voltar">
+            <a href="listarTasks.html">Voltar</a>
+        </div>
     </main>
 
 
-    <div class="link-voltar">
-        <a href="principal.html">Voltar</a>
-    </div>
+
 
     <script src="src/ctrl/initialize.js"></script>
     <script src="src/model/task.js"></script>

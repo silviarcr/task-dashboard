@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* NAVBAR - Logo e Botão Login/Logout */
 nav {
   background: white;
   box-shadow: 0px -1px 8px 0px #444;
@@ -26,11 +27,12 @@ nav {
 }
 nav > button,
 .link-voltar > a,
-.link-sair > a {
+.link-sair > a, #botao,
+li button {
   font-size: 12px;
   font-weight: 700;
-  background: #e7daec;
-  color: #7f479a;
+  background:  #ff6a36;
+  color: #fff;
   border: none;
   border-radius: 2px;
   box-shadow: 1px 1px 5px 0px #444;
@@ -38,24 +40,22 @@ nav > button,
   transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
 }
 nav > button:hover,
-.link-sair > a:hover {
-  background: #7f479a;
-  color: #fff;
+.link-sair > a:hover, #botao:hover {
+  background: #fff;
+  color: #ff6a36;
   cursor: pointer;
 }
 .link-voltar {
   background: #7f479a;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  padding: 20px;
+ }
 .link-voltar > a,
 .link-sair > a {
   text-decoration: none;
 }
 .link-voltar > a:hover {
   background-color: #fff;
+  color: #ff6a36;
   cursor: pointer;
 }
 main {
@@ -67,27 +67,12 @@ main {
   justify-content: center;
   align-items: center;
 }
-main > button {
-  background: #fff;
-  color: #7f479a;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 10px 20px;
-  width: 120px;
-  border-radius: 2px;
-  border: none;
-  box-shadow: 1px 1px 5px 0px #444;
-  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
-}
-main > button:hover {
-  background: #e7daec;
-  color: #d13a9f;
-  box-shadow: 1px 1px 5px 0px #444;
-  cursor: pointer;
-}
+
 .menu-principal {
   margin: 0 auto;
-}
+  display: flex;
+ }
+ 
 #modal,
 #modal-cadastro {
   background: white;
@@ -98,6 +83,11 @@ main > button:hover {
   width: 300px;
   z-index: 9;
   position: relative;
+}
+
+.logo-login {
+  padding: 50px;
+  margin: 0;
 }
 .boxTexto {
   border-radius: 15px;
@@ -115,26 +105,9 @@ main > button:hover {
   padding-left: 10px;
   height: 30px;
 }
-.boxSenha {
-  border-radius: 15px;
-  border-width: 1px;
-  border-color: #7E459A;
-  margin: 10px;
-  padding-left: 10px;
-  height: 30px;
-}
-.logo-login {
-  padding: 50px;
-  margin: 0;
-}
-.formulario {
-  padding: 46px;
-  padding-top: 10px;
-  margin: auto;
-  display: block;
-}
+
 .botao-login {
-  background-color: rebeccapurple;
+  background-color: #ff6a36;
   color: #FFFFFF;
   border: none;
   border-radius: 15px;
@@ -168,8 +141,15 @@ main > button:hover {
   display: flex;
 }
 
-/* Tabela - Listar Tasks */
+/* Formulario de Login */
+.formulario {
+  padding: 46px;
+  padding-top: 10px;
+  margin: auto;
+  display: block;
+}
 
+/* Tabela - Listar Tasks */
 #tasks {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -177,7 +157,7 @@ main > button:hover {
 }
 #tasks td,
 #tasks th {
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   padding: 8px;
 }
 #tasks tr:nth-child(even) {
@@ -187,14 +167,14 @@ main > button:hover {
   background-color: #444;
 }
 #tasks th {
-  background-color: #874caf;
-  color: white;
+  /* background-color: #874caf; */
+  background-color: #ccc;
+  color: #686975;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
 }
 /* Lista de Funcionalidades da Aplicação */
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -208,17 +188,10 @@ li {
 li:last-child {
   border: none;
 }
-li button {
-  font-size: 18px;
-  color: #444;
-  border-radius: 2px;
-  border: none;
-  box-shadow: 1px 1px 5px 0px #444;
-  transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
-}
+
 li button:hover {
   background: #e7daec;
-  color: #d13a9f;
+  color: #ff6a36;
   box-shadow: 1px 1px 5px 0px #444;
   cursor: pointer;
   transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
@@ -229,16 +202,20 @@ li button:hover {
   border: 1px solid #fff;
 }
 #task fieldset button{
-  font-size: 17px;
-  color: #444;
-  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #e7daec;
+  color: #ff6a36;
   border: none;
+  border-radius: 2px;
   box-shadow: 1px 1px 5px 0px #444;
+  padding: 10px 20px;
+  margin-top: 10px;
   transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
 }
 #task fieldset button:hover{
-  background: #e7daec;
-  color: #d13a9f;
+  background: white;
+  color: #ff6a36;
   box-shadow: 1px 1px 5px 0px #444;
   cursor: pointer;
   transition: background .3s cubic-bezier(0.19, 1, 0.22, 1), color .5s ease-out;
